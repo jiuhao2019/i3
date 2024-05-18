@@ -80,6 +80,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun
 bindsym $mod+t exec --no-startup-id rofi -show window
 bindsym $mod+Return exec --no-startup-id wezterm start tmux
+bindsym $mod+e exec --no-startup-id emacs
 bindsym $mod+p exec --no-startup-id /usr/local/bin/flameshot gui
 bindsym $mod+n exec --no-startup-id /usr/local/bin/thunar
 bindsym $mod+o exec --no-startup-id i3lock
@@ -114,6 +115,7 @@ floating_modifier $mod
 floating_minimum_size 75 x 50
 floating_maximum_size -1 x -1
 for_window [class="wezterm"] focus
+for_window [class="Emacs"] focus
 for_window [class="firefox"] focus
 for_window [class="Thunar"] focus
 for_window [class="vlc"] focus
@@ -125,20 +127,20 @@ for_window [class="VirtualBox Manager"] focus
 #
 assign [class="wezterm"] $ws1
 assign [class="firefox"] $ws2
-assign [class="librewolf"] $ws2
 assign [class="Thunar"] $ws3
 assign [class="Image Lounge"] $ws3
 assign [class="vlc"] $ws4
 assign [class="Deadbeef"] $ws4
 assign [class="VirtualBox Machine"] $ws5
 assign [class="VirtualBox Manager"] $ws5
+assign [class="Emacs"] $ws6
 #
 set $ws1 "ⅰ term"
 set $ws2 "ⅱ web"
 set $ws3 "ⅲ file"
 set $ws4 "ⅳ media"
 set $ws5 "ⅴ virt"
-set $ws6 "ⅵ "
+set $ws6 "ⅵ emacs"
 set $ws7 "ⅶ "
 set $ws8 "ⅷ "
 set $ws9 "ⅸ "
