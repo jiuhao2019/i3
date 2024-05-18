@@ -1,0 +1,210 @@
+######################################
+#                                    #
+######################################
+#leader use win key
+set $mod Mod4
+gaps inner 6
+gaps outer 1
+# focus_follows_mouse yes|no
+focus_follows_mouse no
+# popup_during_fullscreen smart|ignore|leave_fullscreen
+popup_during_fullscreen smart
+#workspace_auto_back_and_forth yes|no
+workspace_auto_back_and_forth yes
+######################################
+#                                    #
+######################################
+# child_border of client.focused 修改窗口边框的颜色
+# dracula theme
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #009900
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+client.background       #F8F8F2
+######################################
+#                                    #
+######################################
+# default_border normal|none|pixel
+# default_border normal|pixel <边框宽度>
+# default_floating_border normal|none|pixel
+# default_floating_border normal|pixel <边框宽度>
+default_border pixel 3
+######################################
+#                                    #
+######################################
+# hide_edge_borders none|vertical|horizontal|both|smart
+hide_edge_borders none
+######################################
+#                                    #
+######################################
+#autostart app
+# xrandr --current
+# exec xrandr --output DP-1 --primary
+# exec_always xrandr --output DP-1 --mode 2048x1152
+# screen off | sleep | shutdown(time unit: seconds)
+exec --no-startup-id xset dpms 3600
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id ibus-daemon -drx
+exec_always --no-startup-id dunst -conf ~/.config/dunst/dunstrc
+######################################
+#                                    #
+######################################
+bindsym Caps_Lock --release exec --no-startup-id dunstify "CapsLock: `xset q | sed -n 's/^.*Caps Lock:\s*\(\S*\).*$/\1/p'`" -t 1500 -r 6 -u low
+# bar toggle, hide or show
+bindsym $mod+m bar mode toggle
+# switch/iterate between workspaces
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+#change focus
+bindsym $mod+h focus left
+bindsym $mod+l focus right
+bindsym $mod+k focus up
+bindsym $mod+j focus down
+#move focus
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+j move down
+# split in horizontal orientation is default
+# split in vertical orientation
+bindsym $mod+v split v
+#full screen toggle
+bindsym $mod+f fullscreen toggle
+#change focus between tiling or floating
+bindsym $mod+b exec --no-startup-id ibus-daemon -drx
+bindsym $mod+i focus mode_toggle
+bindsym $mod+Shift+i floating toggle
+bindsym $mod+Shift+r restart
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun
+bindsym $mod+t exec --no-startup-id rofi -show window
+bindsym $mod+Return exec --no-startup-id wezterm start tmux
+bindsym $mod+p exec --no-startup-id /usr/local/bin/flameshot gui
+bindsym $mod+n exec --no-startup-id /usr/local/bin/thunar
+bindsym $mod+o exec --no-startup-id i3lock
+######################################
+#                                    #
+######################################
+set $resize [h]width- [l]width+ [j]height- [k]height+
+mode "$resize" {
+    bindsym h resize shrink width 3 px or 3 ppt
+        bindsym k resize grow height 3 px or 3 ppt
+        bindsym j resize shrink height 3 px or 3 ppt
+        bindsym l resize grow width 3 px or 3 ppt
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "$resize"
+######################################
+#                                    #
+######################################
+set $close_win [y]Close [n]Cancel
+mode "$close_win" {
+    bindsym y kill , mode default
+        bindsym Return kill, mode default
+        bindsym n mode default
+        bindsym Escape mode default
+}
+bindsym $mod+q mode "$close_win"
+######################################
+#                                    #
+######################################
+# bind program to workspace and focus to them on startup:
+floating_modifier $mod
+floating_minimum_size 75 x 50
+floating_maximum_size -1 x -1
+for_window [class="wezterm"] focus
+for_window [class="firefox"] focus
+for_window [class="Thunar"] focus
+for_window [class="vlc"] focus
+for_window [class="Deadbeef"] focus
+for_window [class="Image Lounge"] focus
+for_window [class="libreoffice"] focus
+for_window [class="VirtualBox Machine"] focus
+for_window [class="VirtualBox Manager"] focus
+#
+assign [class="wezterm"] $ws1
+assign [class="firefox"] $ws2
+assign [class="librewolf"] $ws2
+assign [class="Thunar"] $ws3
+assign [class="Image Lounge"] $ws3
+assign [class="vlc"] $ws4
+assign [class="Deadbeef"] $ws4
+assign [class="VirtualBox Machine"] $ws5
+assign [class="VirtualBox Manager"] $ws5
+#
+set $ws1 "ⅰ term"
+set $ws2 "ⅱ web"
+set $ws3 "ⅲ file"
+set $ws4 "ⅳ media"
+set $ws5 "ⅴ virt"
+set $ws6 "ⅵ "
+set $ws7 "ⅶ "
+set $ws8 "ⅷ "
+set $ws9 "ⅸ "
+set $ws10 "ⅹ "
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+#move focus to other workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+10 move container to workspace $ws10
+
+# set floating (nontiling) for apps needing it
+for_window [class="Galculator" instance="galculator"] floating enable
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="qt5ct" instance="qt5ct"] floating enable
+for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
+for_window [window_role="About"] floating enable
+
+############################################
+# bar settings (input comes from i3blocks) #
+############################################
+
+bar {
+    i3bar_command i3bar
+        height 21
+        font pango: FiraCode Nerd Font 17
+        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+# position top|bottom
+        position top
+# mode dock|hide|invisible
+        mode dock
+# hidden_state hide|show
+        hidden_state hide
+# tray_output none|primary|<output>
+# tray_output primary
+        tray_padding 0
+# workspace_buttons yes|no
+        workspace_buttons yes
+# workspace_min_width 40
+        strip_workspace_numbers no
+
+        colors {
+            background #282A36
+                statusline #F8F8F2
+                separator  #44475A
+
+                focused_workspace  #44475A #009900 #F8F8F2
+                active_workspace   #282A36 #44475A #F8F8F2
+                inactive_workspace #282A36 #282A36 #BFBFBF
+                urgent_workspace   #FF5555 #FF5555 #F8F8F2
+                binding_mode       #FF5555 #FF5555 #F8F8F2
+        }
+}
