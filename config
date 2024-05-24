@@ -77,6 +77,7 @@ bindsym $mod+b exec --no-startup-id ibus-daemon -drx
 bindsym $mod+i focus mode_toggle
 bindsym $mod+Shift+i floating toggle
 bindsym $mod+Shift+r restart
+bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun
 bindsym $mod+t exec --no-startup-id rofi -show window
 bindsym $mod+Return exec --no-startup-id wezterm start tmux
@@ -96,17 +97,6 @@ mode "$resize" {
         bindsym Escape mode "default"
 }
 bindsym $mod+r mode "$resize"
-######################################
-#                                    #
-######################################
-set $close_win [y]Close [n]Cancel
-mode "$close_win" {
-    bindsym y kill , mode default
-        bindsym Return kill, mode default
-        bindsym n mode default
-        bindsym Escape mode default
-}
-bindsym $mod+q mode "$close_win"
 ######################################
 #                                    #
 ######################################
