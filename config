@@ -40,11 +40,8 @@ hide_edge_borders none
 #                                    #
 ######################################
 #autostart app
-# xrandr --current
-# exec xrandr --output DP-1 --primary
-# exec_always xrandr --output DP-1 --mode 2048x1152
-# screen off | sleep | shutdown(time unit: seconds)
-exec --no-startup-id xset dpms 3600
+exec --no-startup-id xset -dpms
+exec --no-startup-id xset s off
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id ibus-daemon -drx
 exec_always --no-startup-id dunst -conf ~/.config/dunst/dunstrc
