@@ -82,8 +82,8 @@ bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun
 bindsym $mod+t exec --no-startup-id rofi -show window
 bindsym $mod+Return exec --no-startup-id wezterm start tmux
 bindsym $mod+e exec --no-startup-id emacs
-bindsym $mod+p exec --no-startup-id /usr/local/bin/flameshot gui
-bindsym $mod+n exec --no-startup-id /usr/local/bin/thunar
+bindsym $mod+p exec --no-startup-id /usr/bin/flameshot gui
+bindsym $mod+n exec --no-startup-id /usr/bin/thunar
 bindsym $mod+o exec --no-startup-id i3lock
 ######################################
 #                                    #
