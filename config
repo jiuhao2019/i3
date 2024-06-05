@@ -17,7 +17,7 @@ workspace_auto_back_and_forth yes
 # child_border of client.focused 修改窗口边框的颜色
 # dracula theme
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #4c0099
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #7700ff
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
@@ -77,7 +77,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun
 bindsym $mod+t exec --no-startup-id rofi -show window
-bindsym $mod+Return exec --no-startup-id wezterm start zsh
+bindsym $mod+Return exec --no-startup-id wezterm
 bindsym $mod+e exec --no-startup-id emacs
 bindsym $mod+p exec --no-startup-id /usr/bin/flameshot gui
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
