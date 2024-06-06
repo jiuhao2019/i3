@@ -114,20 +114,20 @@ for_window [class="VirtualBox Manager"] focus
 assign [class="wezterm"] $ws1
 assign [class="firefox"] $ws2
 assign [class="Thunar"] $ws3
-assign [class="Image Lounge"] $ws3
-assign [class="vlc"] $ws6
-assign [class="VirtualBox Machine"] $ws5
-assign [class="VirtualBox Manager"] $ws5
 assign [class="Emacs"] $ws4
+assign [class="VirtualBox Machine"] $ws5
+assign [class="VirtualBox Manager"] $ws6
+assign [class="vlc"] $ws7
+assign [class="Image Lounge"] $ws8
 #
 set $ws1 "ⅰ term"
 set $ws2 "ⅱ web"
 set $ws3 "ⅲ file"
 set $ws4 "ⅳ emacs"
-set $ws5 "ⅴ virt"
-set $ws6 "ⅵ media"
-set $ws7 "ⅶ "
-set $ws8 "ⅷ "
+set $ws5 "ⅴ v-machine"
+set $ws6 "ⅵ v-manage"
+set $ws7 "ⅶ vlc"
+set $ws8 "ⅷ pic"
 set $ws9 "ⅸ "
 set $ws10 "ⅹ "
 # switch to workspace
