@@ -30,7 +30,7 @@ client.background       #F8F8F2
 # default_border normal|pixel <边框宽度>
 # default_floating_border normal|none|pixel
 # default_floating_border normal|pixel <边框宽度>
-default_border pixel 3
+default_border pixel 1
 ######################################
 #                                    #
 ######################################
