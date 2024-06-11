@@ -30,7 +30,7 @@ client.background       #F8F8F2
 # default_border normal|pixel <边框宽度>
 # default_floating_border normal|none|pixel
 # default_floating_border normal|pixel <边框宽度>
-default_border pixel 1
+default_border pixel 0
 ######################################
 #                                    #
 ######################################
@@ -77,7 +77,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun
 bindsym $mod+t exec --no-startup-id rofi -show window
-bindsym $mod+Return exec --no-startup-id wezterm
+bindsym $mod+Return exec --no-startup-id wezterm start zsh
 bindsym $mod+e exec --no-startup-id emacs
 bindsym $mod+p exec --no-startup-id /usr/bin/flameshot gui
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
@@ -188,7 +188,7 @@ bar {
                 statusline #F8F8F2
                 separator  #44475A
 
-                focused_workspace  #44475A #009900 #F8F8F2
+                focused_workspace  #44475A #7700ff #F8F8F2
                 active_workspace   #282A36 #44475A #F8F8F2
                 inactive_workspace #282A36 #282A36 #BFBFBF
                 urgent_workspace   #FF5555 #FF5555 #F8F8F2
