@@ -120,27 +120,16 @@ assign [class="VirtualBox Manager"] $ws6
 assign [class="vlc"] $ws7
 assign [class="Image Lounge"] $ws8
 #
-set $ws1 "ⅰ term"
-set $ws2 "ⅱ web"
-set $ws3 "ⅲ file"
-set $ws4 "ⅳ emacs"
-set $ws5 "ⅴ v-machine"
-set $ws6 "ⅵ v-manage"
-set $ws7 "ⅶ vlc"
-set $ws8 "ⅷ pic"
-set $ws9 "ⅸ "
-set $ws10 "ⅹ "
-# switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 #move focus to other workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
