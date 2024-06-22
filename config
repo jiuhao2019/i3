@@ -30,7 +30,7 @@ client.background       #F8F8F2
 # default_border normal|pixel <边框宽度>
 # default_floating_border normal|none|pixel
 # default_floating_border normal|pixel <边框宽度>
-default_border pixel 0
+default_border pixel 1
 ######################################
 #                                    #
 ######################################
@@ -130,6 +130,17 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+10 workspace $ws10
 #move focus to other workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
