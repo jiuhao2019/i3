@@ -14,18 +14,6 @@ workspace_auto_back_and_forth yes
 ######################################
 #                                    #
 ######################################
-# child_border of client.focused 修改窗口边框的颜色
-# dracula theme
-# class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #7700ff
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-client.background       #F8F8F2
-######################################
-#                                    #
-######################################
 # default_border normal|none|pixel
 # default_border normal|pixel <边框宽度>
 # default_floating_border normal|none|pixel
@@ -161,35 +149,79 @@ for_window [window_role="About"] floating enable
 ############################################
 # bar settings (input comes from i3blocks) #
 ############################################
-
+######################################
+#                                    #
+######################################
+set $rosewater #f4dbd6
+set $flamingo #f0c6c6
+set $pink #f5bde6
+set $mauve #c6a0f6
+set $red #ed8796
+set $maroon #ee99a0
+set $peach #f5a97f
+set $yellow #eed49f
+set $green #a6da95
+set $teal #8bd5ca
+set $sky #91d7e3
+set $sapphire #7dc4e4
+set $blue #8aadf4
+set $lavender #b7bdf8
+set $text #cad3f5
+set $subtext1 #b8c0e0
+set $subtext0 #a5adcb
+set $overlay2 #939ab7
+set $overlay1 #8087a2
+set $overlay0 #6e738d
+set $surface2 #5b6078
+set $surface1 #494d64
+set $surface0 #363a4f
+set $base #24273a
+set $mantle #1e2030
+set $crust #181926
+######################################
+#                                    #
+######################################
+# child_border of client.focused 修改窗口边框的颜色
+# dracula theme
+# class                 border  bground text    indicator child_border
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
+######################################
+#                                    #
+######################################
 bar {
     i3bar_command i3bar
-        height 21
-        font pango: FiraCode Nerd Font 17
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    height 21
+    font pango: FiraCode Nerd Font 17
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
 # position top|bottom
-        position top
+    position top
 # mode dock|hide|invisible
-        mode dock
+    mode dock
 # hidden_state hide|show
-        hidden_state hide
+    hidden_state hide
 # tray_output none|primary|<output>
 # tray_output primary
-        tray_padding 0
+    tray_padding 0
 # workspace_buttons yes|no
-        workspace_buttons yes
+    workspace_buttons yes
 # workspace_min_width 40
-        strip_workspace_numbers no
+    strip_workspace_numbers no
 
-        colors {
-            background #282A36
-                statusline #F8F8F2
-                separator  #44475A
-
-                focused_workspace  #44475A #7700ff #F8F8F2
-                active_workspace   #282A36 #44475A #F8F8F2
-                inactive_workspace #282A36 #282A36 #BFBFBF
-                urgent_workspace   #FF5555 #FF5555 #F8F8F2
-                binding_mode       #FF5555 #FF5555 #F8F8F2
-        }
+  colors {
+    background         $base
+    statusline         $text
+    focused_statusline $text
+    focused_separator  $base
+    focused_workspace  $base $base $green
+    active_workspace   $base $base $blue
+    inactive_workspace $base $base $surface1
+    urgent_workspace   $base $base $surface1
+    binding_mode       $base $base $surface1
+  }
 }
