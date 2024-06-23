@@ -199,18 +199,18 @@ bar {
     height 21
     font pango: FiraCode Nerd Font 17
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
-# position top|bottom
-    position top
-# mode dock|hide|invisible
+    # position top|bottom
+    position bottom
+    # mode dock|hide|invisible
     mode dock
-# hidden_state hide|show
+    # hidden_state hide|show
     hidden_state hide
-# tray_output none|primary|<output>
-# tray_output primary
+    # tray_output none|primary|<output>
+    # tray_output primary
     tray_padding 0
-# workspace_buttons yes|no
+    # workspace_buttons yes|no
     workspace_buttons yes
-# workspace_min_width 40
+    workspace_min_width 68
     strip_workspace_numbers no
 
   colors {
