@@ -98,6 +98,7 @@ for_window [class="Image Lounge"] focus
 for_window [class="libreoffice"] focus
 for_window [class="VirtualBox Machine"] focus
 for_window [class="VirtualBox Manager"] focus
+for_window [class="code-oss"] focus
 #
 assign [class="wezterm"] $ws1
 assign [class="firefox"] $ws2
@@ -107,6 +108,7 @@ assign [class="VirtualBox Machine"] $ws5
 assign [class="VirtualBox Manager"] $ws6
 assign [class="vlc"] $ws7
 assign [class="Image Lounge"] $ws8
+assign [class="code-oss"] $ws9
 #
 set $ws1 "1"
 set $ws2 "2"
