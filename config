@@ -95,6 +95,7 @@ for_window [class="firefox"] focus
 for_window [class="Thunar"] focus
 for_window [class="vlc"] focus
 for_window [class="Code"] focus
+for_window [class="pavucontrol"] focus
 for_window [class="Image Lounge"] focus
 for_window [class="libreoffice"] focus
 for_window [class="VirtualBox Machine"] focus
@@ -105,20 +106,21 @@ assign [class="firefox"] $ws2
 assign [class="Thunar"] $ws3
 assign [class="Emacs"] $ws4
 assign [class="Code"] $ws5
-assign [class="VirtualBox Machine"] $ws10
+assign [class="pavucontrol"] $ws7
 assign [class="vlc"] $ws8
 assign [class="Image Lounge"] $ws9
+assign [class="VirtualBox Machine"] $ws10
 #
-set $ws1 "1:wezterm"
-set $ws2 "2:firefox"
-set $ws3 "3:Thunar"
-set $ws4 "4:emacs"
-set $ws5 "5:vscode"
-set $ws6 "6:"
-set $ws7 "7:"
-set $ws8 "8:vlc"
-set $ws9 "9:nmacs"
-set $ws10 "10:vbox"
+set $ws1 "1:wezterm    "
+set $ws2 "2:firefox    "
+set $ws3 "3:Thunar    "
+set $ws4 "4:emacs    "
+set $ws5 "5:vscode    "
+set $ws6 "6:    "
+set $ws7 "7:volume    "
+set $ws8 "8:vlc    "
+set $ws9 "9:nmacs    "
+set $ws10 "10:vbox    "
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -211,7 +213,7 @@ bar {
     tray_padding 0
     # workspace_buttons yes|no
     workspace_buttons yes
-    workspace_min_width 68
+    workspace_min_width 88
     strip_workspace_numbers yes
 
   colors {
