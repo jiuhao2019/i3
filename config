@@ -214,7 +214,7 @@ bar {
     # workspace_buttons yes|no
     workspace_buttons yes
     workspace_min_width 88
-    strip_workspace_numbers yes
+    strip_workspace_numbers no
 
   colors {
     background         $base
