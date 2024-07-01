@@ -3,8 +3,8 @@
 ######################################
 #leader use win key
 set $mod Mod4
-gaps inner 6
-gaps outer 1
+gaps inner 18
+gaps outer 3
 # focus_follows_mouse yes|no
 focus_follows_mouse no
 # popup_during_fullscreen smart|ignore|leave_fullscreen
@@ -18,7 +18,7 @@ workspace_auto_back_and_forth yes
 # default_border normal|pixel <边框宽度>
 # default_floating_border normal|none|pixel
 # default_floating_border normal|pixel <边框宽度>
-default_border pixel 1
+default_border pixel 0
 ######################################
 #                                    #
 ######################################
