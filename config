@@ -97,33 +97,28 @@ for_window [class="Emacs"] focus
 for_window [class="firefox"] focus
 for_window [class="Thunar"] focus
 for_window [class="vlc"] focus
-for_window [class="Code"] focus
 for_window [class="pavucontrol"] focus
 for_window [class="Image Lounge"] focus
 for_window [class="libreoffice"] focus
-for_window [class="VirtualBox Machine"] focus
-for_window [class="VirtualBox Manager"] focus
 #
 assign [class="wezterm"] $ws1
 assign [class="firefox"] $ws2
 assign [class="Thunar"] $ws3
 assign [class="Emacs"] $ws4
-assign [class="Code"] $ws5
 assign [class="pavucontrol"] $ws7
 assign [class="vlc"] $ws8
 assign [class="Image Lounge"] $ws9
-assign [class="VirtualBox Machine"] $ws10
 #
 set $ws1 "1:wezterm    "
 set $ws2 "2:firefox    "
 set $ws3 "3:Thunar    "
 set $ws4 "4:emacs    "
-set $ws5 "5:vscode    "
+set $ws5 "5:    "
 set $ws6 "6:    "
 set $ws7 "7:volume    "
 set $ws8 "8:vlc    "
-set $ws9 "9:nmacs    "
-set $ws10 "10:vbox    "
+set $ws9 "9:    "
+set $ws10 "10"
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -206,7 +201,7 @@ bar {
     font pango: FiraCode Nerd Font 17
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
     # position top|bottom
-    position bottom
+    position top
     # mode dock|hide|invisible
     mode dock
     # hidden_state hide|show
