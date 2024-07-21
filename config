@@ -18,7 +18,7 @@ workspace_auto_back_and_forth yes
 # default_border normal|pixel <边框宽度>
 # default_floating_border normal|none|pixel
 # default_floating_border normal|pixel <边框宽度>
-default_border pixel 1
+default_border pixel 4
 ######################################
 #                                    #
 ######################################
@@ -166,7 +166,8 @@ set $teal #8bd5ca
 set $sky #91d7e3
 set $sapphire #7dc4e4
 set $blue #8aadf4
-set $lavender #b7bdf8
+# set $lavender #b7bdf8
+set $lavender #9933ff
 set $text #cad3f5
 set $subtext1 #b8c0e0
 set $subtext0 #a5adcb
@@ -198,7 +199,7 @@ client.background        $base
 bar {
     i3bar_command i3bar
     height 21
-    font pango: FiraCode Nerd Font 17
+    font pango: FiraCode Nerd Font Mono 17
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
     # position top|bottom
     position top
@@ -212,7 +213,7 @@ bar {
     # workspace_buttons yes|no
     workspace_buttons yes
     workspace_min_width 88
-    strip_workspace_numbers no
+    strip_workspace_numbers yes
 
   colors {
     background         $base
