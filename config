@@ -199,7 +199,7 @@ client.background        $base
 bar {
     i3bar_command i3bar
     height 21
-    font pango: FiraCode Nerd Font Mono 17
+    font pango: FiraCode Nerd Font Mono ,bold medium 17
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
     # position top|bottom
     position top
