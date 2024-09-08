@@ -108,12 +108,12 @@ set $ws1 "1:wezterm    "
 set $ws2 "2:firefox    "
 set $ws3 "3:Thunar    "
 set $ws4 "4:emacs    "
-set $ws5 "5:    "
-set $ws6 "6:    "
+set $ws5 "5:5    "
+set $ws6 "6:6    "
 set $ws7 "7:volume    "
 set $ws8 "8:vlc    "
-set $ws9 "9:    "
-set $ws10 "10"
+set $ws9 "9:9    "
+set $ws10 "10:10   "
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -208,7 +208,7 @@ bar {
     # workspace_buttons yes|no
     workspace_buttons yes
     workspace_min_width 88
-    strip_workspace_numbers yes
+    strip_workspace_numbers no
 
   colors {
     background         $base
