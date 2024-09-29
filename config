@@ -1,6 +1,6 @@
 #leader use win key
 set $mod Mod4
-gaps inner 18
+gaps inner 10
 gaps outer 3
 # focus_follows_mouse yes|no
 focus_follows_mouse no
@@ -21,13 +21,13 @@ default_floating_border pixel
 # 开机启动                      
 ######################################
 # if os as client in virtualbox
-exec --no-startup-id VBoxClient-all
-exec --no-startup-id VBoxClient -vf --vmsvga
+#exec --no-startup-id VBoxClient-all
+#exec --no-startup-id VBoxClient -vf --vmsvga
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id ibus-daemon -drx
-exec_always --no-startup-id dunst -conf ~/.config/dunst/dunstrc
+exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc
 exec --no-startup-id wezterm start zsh
 exec --no-startup-id clash
 exec --no-startup-id ~/.config/i3/autoload.sh
@@ -180,7 +180,7 @@ client.background        $base
 bar {
     i3bar_command i3bar
     height 21
-    font pango: FiraCode Nerd Font Mono,regular medium 11
+    font pango: FiraCode Nerd Font Mono,regular medium 17
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
     # position top|bottom
     position top
