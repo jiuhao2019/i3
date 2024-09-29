@@ -21,10 +21,11 @@ default_floating_border pixel
 # 开机启动                      
 ######################################
 # if os as client in virtualbox
-# exec --no-startup-id VBoxClient-all
-# exec --no-startup-id VBoxClient -vf --vmsvga
+#exec --no-startup-id VBoxClient-all
+#exec --no-startup-id VBoxClient -vf --vmsvga
 exec --no-startup-id clash
 exec --no-startup-id opensnitch-ui
+exec --no-startup-id /opt/gitblit/gitblit.sh
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
 exec --no-startup-id dex --autostart --environment i3
@@ -179,7 +180,7 @@ client.background        $base
 bar {
     i3bar_command i3bar
     height 21
-    font pango: FiraCode Nerd Font Mono,regular medium 18
+    font pango: FiraCode Nerd Font Mono,regular medium 11
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
     # position top|bottom
     position top
