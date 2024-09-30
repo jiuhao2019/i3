@@ -21,6 +21,7 @@ default_floating_border pixel
 # 开机启动                      
 ######################################
 # if os as client in virtualbox
+exec --no-startup-id opensnitch-ui
 exec --no-startup-id VBoxClient-all
 exec --no-startup-id VBoxClient -vf --vmsvga
 exec --no-startup-id xset -dpms
@@ -31,7 +32,6 @@ exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc
 exec --no-startup-id wezterm start zsh
 exec --no-startup-id clash
 exec --no-startup-id ~/.config/i3/autoload.sh
-exec --no-startup-id opensnitch-ui
 ##
 bindsym Caps_Lock --release exec --no-startup-id dunstify "CapsLock: `xset q | sed -n 's/^.*Caps Lock:\s*\(\S*\).*$/\1/p'`" -t 1500 -r 6 -u low
 # bar toggle, hide or show
