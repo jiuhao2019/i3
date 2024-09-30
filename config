@@ -22,6 +22,7 @@ default_floating_border pixel
 ######################################
 # if os as client in virtualbox
 exec --no-startup-id opensnitch-ui&
+exec_always --no-startup-id feh --bg-fill -no-fehbg ~/.local/share/backgrounds/wave-Dark-nord.jpg
 exec --no-startup-id VBoxClient-all
 exec --no-startup-id VBoxClient -vf --vmsvga
 exec --no-startup-id xset -dpms
