@@ -2,7 +2,7 @@
 set $mod Mod4
 
 gaps inner 18
-gaps outer 3
+gaps outer 0
 
 #非bar栏里的其他区域字体
 font pango: FiraCode Nerd Font Mono,regular medium 13
@@ -17,7 +17,7 @@ popup_during_fullscreen smart
 workspace_auto_back_and_forth yes
 
 # hide_edge_borders none|vertical|horizontal|both|smart
-hide_edge_borders none
+hide_edge_borders both
 
 # workspace_layout <default|stacking|tabbed>
 workspace_layout tabbed
@@ -25,8 +25,8 @@ workspace_layout tabbed
 #边框粗细                                    
 # default_border normal|none|pixel
 # default_floating_border normal|none|pixel
-default_border pixel 3
-default_floating_border pixel 3
+default_border pixel 0
+default_floating_border pixel 0
 
 # 浮动窗口切换前置键
 floating_modifier $mod
