@@ -54,8 +54,8 @@ bindsym $mod+Shift+j move down
 bindsym $mod+v split v
 #full screen toggle
 bindsym $mod+f fullscreen toggle
-#change focus between tiling or floating
 bindsym $mod+b exec --no-startup-id ibus-daemon -drx
+#change focus between tiling or floating
 bindsym $mod+i focus mode_toggle
 bindsym $mod+Shift+i floating toggle
 bindsym $mod+Shift+r restart
