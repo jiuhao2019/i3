@@ -1,11 +1,11 @@
 #leader use win key
 set $mod Mod4
 
-gaps inner 18
+gaps inner 23
 gaps outer 0
 
 #非bar栏里的其他区域字体
-font pango: FiraCode Nerd Font Mono,regular medium 13
+font pango: FiraCode Nerd Font Mono,bold medium 13
 
 # focus_follows_mouse yes|no
 focus_follows_mouse no
@@ -215,7 +215,7 @@ bar {
     height 21
 
     # bar栏里的区域字体
-    font pango: FiraCode Nerd Font Mono,regular medium 17
+    font pango: FiraCode Nerd Font Mono,bold medium 17
 
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
