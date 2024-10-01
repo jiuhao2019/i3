@@ -176,15 +176,11 @@ set $rosewater #f4dbd6
 set $flamingo #f0c6c6
 set $pink #f5bde6
 set $mauve #c6a0f6
-set $red #ed8796
 set $maroon #ee99a0
 set $peach #f5a97f
-set $yellow #eed49f
-set $green #a6da95
 set $teal #8bd5ca
 set $sky #91d7e3
 set $sapphire #7dc4e4
-set $blue #8aadf4
 # set $lavender #b7bdf8
 set $lavender #d79921
 # set $lavender #9933ff
@@ -201,16 +197,44 @@ set $base #24273a
 set $mantle #1e2030
 set $crust #181926
 
+# set primary gruvbox colorscheme colors
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+
+#start of window title bars & borders section
+
 # child_border of client.focused 修改窗口边框的颜色
+
 # dracula theme
 # class                 border  bground text    indicator child_border
 # target                 title     bg    text   indicator  border
-client.focused           $lavender $base $text  $rosewater $lavender
-client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
-client.unfocused         $overlay0 $base $text  $rosewater $overlay0
-client.urgent            $peach    $base $peach $overlay0  $peach
-client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
-client.background        $base
+# client.focused           $lavender $base $text  $rosewater $lavender
+# client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+# client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+# client.urgent            $peach    $base $peach $overlay0  $peach
+# client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+# client.background        $base
+
+# green gruvbox
+# class                 border|backgr|text|indicator|child_border
+#client.focused          $green $green $darkgray $purple $darkgray
+#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+#client.urgent           $red $red $white $red $red
+
+# blue gruvbox
+# class                 border|backgr|text|indicator|child_border
+client.focused          $blue $blue $darkgray $purple $darkgray
+client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+client.urgent           $red $red $white $red $red
 
 bar {
     i3bar_command i3bar
@@ -245,14 +269,21 @@ bar {
     strip_workspace_numbers yes
 
   colors {
-    background         $base
-    statusline         $text
+    # bar background color
+    background $bg
+
+    # text color used for blocks that do not have a color specified.
+    statusline $yellow
+
     focused_statusline $text
     focused_separator  $base
-    focused_workspace  $base $base $green
-    active_workspace   $base $base $blue
-    inactive_workspace $base $base $surface1
-    urgent_workspace   $base $base $surface1
+
+    # workspaces section            
+                         # border  backgr.   text
+    focused_workspace    $aqua     $aqua     $darkgray
+    inactive_workspace   $darkgray $darkgray $yellow
+    active_workspace     $darkgray $darkgray $yellow
+    urgent_workspace     $red $red $bg
     binding_mode       $base $base $surface1
   }
 }
