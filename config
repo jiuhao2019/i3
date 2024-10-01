@@ -33,6 +33,8 @@ floating_modifier $mod
 floating_minimum_size 75 x 50
 floating_maximum_size -1 x -1
 
+# title_align left|center|right
+title_align center
 # 开机随i3启动                      
 
 exec --no-startup-id opensnitch-ui&
@@ -44,7 +46,7 @@ exec --no-startup-id VBoxClient -vf --vmsvga
 
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
-exec --no-startup-id ibus-daemon -drx
+exec --no-startup-id ibus-daemon -rxRd
 exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc
 exec --no-startup-id wezterm start zsh
 exec --no-startup-id clash&
