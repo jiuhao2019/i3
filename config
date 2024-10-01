@@ -1,30 +1,47 @@
 #leader use win key
 set $mod Mod4
-gaps inner 17
+
+gaps inner 18
 gaps outer 3
+
+#非bar栏里的其他区域字体
+font pango: FiraCode Nerd Font Mono,regular medium 13
+
 # focus_follows_mouse yes|no
 focus_follows_mouse no
+
 # popup_during_fullscreen smart|ignore|leave_fullscreen
 popup_during_fullscreen smart
+
 #workspace_auto_back_and_forth yes|no
 workspace_auto_back_and_forth yes
+
 # hide_edge_borders none|vertical|horizontal|both|smart
 hide_edge_borders none
-######################################
+
+# workspace_layout <default|stacking|tabbed>
+workspace_layout tabbed
+
 #边框粗细                                    
-######################################
 # default_border normal|none|pixel
 # default_floating_border normal|none|pixel
-default_border pixel 4
-default_floating_border pixel
-######################################
-# 开机启动                      
-######################################
-# if os as client in virtualbox
+default_border pixel 3
+default_floating_border pixel 3
+
+# 浮动窗口切换前置键
+floating_modifier $mod
+floating_minimum_size 75 x 50
+floating_maximum_size -1 x -1
+
+# 开机随i3启动                      
+
 exec --no-startup-id opensnitch-ui&
 exec_always --no-startup-id feh --bg-fill -no-fehbg ~/.local/share/backgrounds/od_tux.png
+
+# if os as client in virtualbox
 exec --no-startup-id VBoxClient-all
 exec --no-startup-id VBoxClient -vf --vmsvga
+
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
 exec --no-startup-id ibus-daemon -drx
@@ -32,32 +49,45 @@ exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc
 exec --no-startup-id wezterm start zsh
 exec --no-startup-id clash&
 exec --no-startup-id ~/.config/i3/autoload.sh
-##
+
 bindsym Caps_Lock --release exec --no-startup-id dunstify "CapsLock: `xset q | sed -n 's/^.*Caps Lock:\s*\(\S*\).*$/\1/p'`" -t 1500 -r 6 -u low
+
 # bar toggle, hide or show
 bindsym $mod+m bar mode toggle
+
 # switch/iterate between workspaces
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
+
 #change focus
 bindsym $mod+h focus left
 bindsym $mod+l focus right
 bindsym $mod+k focus up
 bindsym $mod+j focus down
+
 #move focus
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+l move right
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+j move down
+
 # split in horizontal orientation is default
 # split in vertical orientation
 bindsym $mod+v split v
+
 #full screen toggle
 bindsym $mod+f fullscreen toggle
+
+#如果偶然出现不能切换到输入中文状态，就重置ibus
 bindsym $mod+b exec --no-startup-id ibus-daemon -drx
+
 #change focus between tiling or floating
 bindsym $mod+i focus mode_toggle
 bindsym $mod+Shift+i floating toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+x layout toggle
+
 bindsym $mod+Shift+r restart
 bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id rofi -show drun
@@ -67,47 +97,50 @@ bindsym $mod+e exec --no-startup-id emacs
 bindsym $mod+p exec --no-startup-id /usr/bin/flameshot gui
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
 bindsym $mod+o exec --no-startup-id i3lock
+
+#修改窗口大小
 set $resize [h]width- [l]width+ [j]height- [k]height+
 mode "$resize" {
-    bindsym h resize shrink width 3 px or 3 ppt
-        bindsym k resize grow height 3 px or 3 ppt
-        bindsym j resize shrink height 3 px or 3 ppt
-        bindsym l resize grow width 3 px or 3 ppt
+    bindsym h resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
         bindsym Escape mode "default"
 }
 bindsym $mod+r mode "$resize"
-# bind program to workspace and focus to them on startup:
-floating_modifier $mod
-floating_minimum_size 75 x 50
-floating_maximum_size -1 x -1
-for_window [class="wezterm"] focus
-for_window [class="Emacs"] focus
-for_window [class="firefox"] focus
-for_window [class="Thunar"] focus
-for_window [class="vlc"] focus
-for_window [class="pavucontrol"] focus
-for_window [class="Image Lounge"] focus
-for_window [class="libreoffice"] focus
-#
-assign [class="wezterm"] $ws1
-assign [class="firefox"] $ws2
-assign [class="Thunar"] $ws3
-assign [class="Emacs"] $ws4
-assign [class="pavucontrol"] $ws7
-assign [class="vlc"] $ws8
-assign [class="Image Lounge"] $ws9
-#
-set $ws1 "1:wezterm    "
-set $ws2 "2:firefox    "
-set $ws3 "3:Thunar    "
-set $ws4 "4:emacs    "
-set $ws5 "5:5    "
-set $ws6 "6:6    "
-set $ws7 "7:volume    "
-set $ws8 "8:vlc    "
-set $ws9 "9:9    "
-set $ws10 "10:10   "
 
+# 打开app自动聚焦其窗口上
+for_window [class="wezterm"] focus
+# for_window [class="Emacs"] focus
+# for_window [class="firefox"] focus
+# for_window [class="Thunar"] focus
+# for_window [class="vlc"] focus
+# for_window [class="pavucontrol"] focus
+# for_window [class="Image Lounge"] focus
+# for_window [class="libreoffice"] focus
+
+#打开app自动将其窗口放置在第x号容器
+assign [class="wezterm"] $ws1
+# assign [class="firefox"] $ws2
+# assign [class="Thunar"] $ws3
+# assign [class="Emacs"] $ws4
+# assign [class="pavucontrol"] $ws7
+# assign [class="vlc"] $ws8
+# assign [class="Image Lounge"] $ws9
+
+#设置容器title
+set $ws1 "♠    "
+set $ws2 "ǣ    "
+set $ws3 "№    "
+set $ws4 "ξ    "
+set $ws5 "ψ    "
+set $ws6 "ϡ    "
+set $ws7 "〄   "
+set $ws8 "∮    "
+set $ws9 "♣    "
+set $ws10 "♪   "
+
+#切换到第x号容器
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -118,7 +151,8 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+10 workspace $ws10
-#move focus to other workspace
+
+#将当前窗口移动到其他容器
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -130,14 +164,12 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+10 move container to workspace $ws10
 
-# set floating (nontiling) for apps needing it
+# 设置某些app打开后窗口默认是浮动的,比如小弹窗
 for_window [class="Galculator" instance="galculator"] floating enable
 for_window [class="qt5ct" instance="qt5ct"] floating enable
 for_window [window_role="About"] floating enable
 
-############################################
-# bar settings (input comes from i3blocks) #
-############################################
+#宏定义颜色值
 set $rosewater #f4dbd6
 set $flamingo #f0c6c6
 set $pink #f5bde6
@@ -151,8 +183,8 @@ set $teal #8bd5ca
 set $sky #91d7e3
 set $sapphire #7dc4e4
 set $blue #8aadf4
-set $lavender #b7bdf8
-# set $lavender #d79921
+# set $lavender #b7bdf8
+set $lavender #d79921
 # set $lavender #9933ff
 set $text #cad3f5
 set $subtext1 #b8c0e0
@@ -166,7 +198,7 @@ set $surface0 #363a4f
 set $base #24273a
 set $mantle #1e2030
 set $crust #181926
-##
+
 # child_border of client.focused 修改窗口边框的颜色
 # dracula theme
 # class                 border  bground text    indicator child_border
@@ -177,25 +209,38 @@ client.unfocused         $overlay0 $base $text  $rosewater $overlay0
 client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
-##
+
 bar {
     i3bar_command i3bar
     height 21
+
+    # bar栏里的区域字体
     font pango: FiraCode Nerd Font Mono,regular medium 17
+
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
+
+    # bar位置
     # position top|bottom
     position top
+
     # mode dock|hide|invisible
     mode hide
+
     # hidden_state hide|show
     hidden_state hide
+
     # tray_output none|primary|<output>
     # tray_output primary
     tray_padding 0
+
+    # 显示/隐藏容器title
     # workspace_buttons yes|no
     workspace_buttons yes
+
     workspace_min_width 88
-    strip_workspace_numbers no
+
+    # 容器title不显示序号
+    strip_workspace_numbers yes
 
   colors {
     background         $base
