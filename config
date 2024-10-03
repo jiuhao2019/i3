@@ -94,7 +94,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+t exec --no-startup-id rofi -show window
-bindsym $mod+Return exec --no-startup-id wezterm
+bindsym $mod+Return exec --no-startup-id wezterm start zsh
 bindsym $mod+e exec --no-startup-id emacs
 bindsym $mod+p exec --no-startup-id /usr/bin/flameshot gui
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
@@ -251,7 +251,7 @@ bar {
 
     # bar位置
     # position top|bottom
-    position top
+    position bottom
 
     # mode dock|hide|invisible
     mode hide
