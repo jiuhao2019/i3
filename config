@@ -129,6 +129,8 @@ bindsym $mod+r mode "$resize"
 # for_window [class="firefox"] focus
 # for_window [class="pavucontrol"] focus
 # for_window [class="Emacs"] focus
+# for_window [class="Emacs" floating_from="user"] resize set 640 480,move right 30px,move down 70px
+for_window [class="Emacs" floating_from="user"] resize set 2040 1280,move left 595px,move up 315px
 for_window [class="Thunar"] focus;layout splith
 for_window [class="vlc"] focus;layout splith
 for_window [class="Eog"] focus;layout splith
