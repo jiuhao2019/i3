@@ -102,6 +102,12 @@ bindsym $mod+y exec  pactl set-sink-volume 0 -1%
 bindsym $mod+u exec  pactl set-sink-volume 0 +1%
 bindsym $mod+m exec  pactl set-sink-mute 0 toggle
 
+# 使当前聚焦的窗口成为便笺簿
+bindsym $mod+Shift+c move scratchpad
+
+# 显示第一个便笺簿窗口
+bindsym $mod+c scratchpad show
+
 #默认锁屏幕方式
 # bindsym $mod+o exec --no-startup-id i3lock
 #i3lock-color方式锁屏幕
@@ -120,34 +126,36 @@ bindsym $mod+r mode "$resize"
 
 # 打开app自动聚焦其窗口上
 # for_window [class="wezterm"] focus
-# for_window [class="Emacs"] focus
 # for_window [class="firefox"] focus
-# for_window [class="Thunar"] focus
-# for_window [class="vlc"] focus
 # for_window [class="pavucontrol"] focus
-# for_window [class="Image Lounge"] focus
-# for_window [class="libreoffice"] focus
+# for_window [class="Emacs"] focus
+for_window [class="Thunar"] focus;layout splith
+for_window [class="vlc"] focus;layout splith
+for_window [class="Eog"] focus;layout splith
+for_window [class="libreoffice"] focus;layout splith
+
 
 #打开app自动将其窗口放置在第x号容器
 # assign [class="wezterm"] $ws1
 # assign [class="firefox"] $ws2
-# assign [class="Thunar"] $ws3
-# assign [class="Emacs"] $ws4
 # assign [class="pavucontrol"] $ws7
-# assign [class="vlc"] $ws8
-# assign [class="Image Lounge"] $ws9
+# assign [class="Emacs"] $ws4
+assign [class="Thunar"] $ws2
+assign [class="Eog"] $ws2
+assign [class="vlc"] $ws3
+assign [class="libreoffice"] $ws3
 
 #设置容器title
-set $ws1 "♠    "
-set $ws2 "ǣ    "
-set $ws3 "№    "
-set $ws4 "ξ    "
-set $ws5 "ψ    "
-set $ws6 "ϡ    "
-set $ws7 "〄   "
-set $ws8 "∮    "
-set $ws9 "♣    "
-set $ws10 "♪   "
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10"10"
 
 #切换到第x号容器
 bindsym $mod+1 workspace $ws1
