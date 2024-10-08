@@ -6,6 +6,7 @@ gaps outer 0
 
 #非bar栏里的其他区域字体
 font pango: FiraCode Nerd Font Mono,bold medium 13
+#font pango: FiraCode Nerd Font Mono,bold medium 9
 
 # focus_follows_mouse yes|no
 focus_follows_mouse no
@@ -125,17 +126,16 @@ mode "$resize" {
 bindsym $mod+r mode "$resize"
 
 # 打开app自动聚焦其窗口上
-# for_window [class="wezterm"] focus
-# for_window [class="firefox"] focus
-# for_window [class="pavucontrol"] focus
-# for_window [class="Emacs"] focus
-# for_window [class="Emacs" floating_from="user"] resize set 640 480,move right 30px,move down 70px
 for_window [class="Emacs" floating_from="user"] resize set 2040 1280,move left 595px,move up 315px
 for_window [class="Thunar"] focus;layout splith
 for_window [class="vlc"] focus;layout splith
 for_window [class="Eog"] focus;layout splith
 for_window [class="libreoffice"] focus;layout splith
 
+# 设置某些app打开后窗口默认是浮动的,比如小弹窗
+for_window [class="Qalculate-gtk" instance="qalculate-gtk"] floating enable
+for_window [class="qt5ct" instance="qt5ct"] floating enable
+for_window [window_role="About"] floating enable
 
 #打开app自动将其窗口放置在第x号容器
 # assign [class="wezterm"] $ws1
@@ -182,11 +182,6 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+10 move container to workspace $ws10
-
-# 设置某些app打开后窗口默认是浮动的,比如小弹窗
-for_window [class="Galculator" instance="galculator"] floating enable
-for_window [class="qt5ct" instance="qt5ct"] floating enable
-for_window [window_role="About"] floating enable
 
 #宏定义颜色值
 set $rosewater #f4dbd6
@@ -259,6 +254,7 @@ bar {
 
     # bar栏里的区域字体
     font pango: FiraCode Nerd Font Mono,bold medium 17
+    #font pango: FiraCode Nerd Font Mono,bold medium 9
 
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
