@@ -5,12 +5,8 @@ gaps inner 23
 gaps outer 0
 
 #非bar栏里的其他区域字体
-<<<<<<< HEAD
 font pango: FiraCode Nerd Font Mono,bold medium 13
 #font pango: FiraCode Nerd Font Mono,bold medium 9
-=======
-font pango: FiraCode Nerd Font Mono,bold medium 9
->>>>>>> 360ef9dfdf0ce3b4278cc5e2ea8161fc9b447926
 
 # focus_follows_mouse yes|no
 focus_follows_mouse no
@@ -130,13 +126,7 @@ mode "$resize" {
 bindsym $mod+r mode "$resize"
 
 # 打开app自动聚焦其窗口上
-<<<<<<< HEAD
 for_window [class="Emacs" floating_from="user"] resize set 2040 1280,move left 595px,move up 315px
-=======
-# for_window [class="wezterm"] focus
-# for_window [class="firefox"] focus
-#for_window [class="Emacs" floating_from="user"] resize set 2040 1280,move left 595px,move up 315px
->>>>>>> 360ef9dfdf0ce3b4278cc5e2ea8161fc9b447926
 for_window [class="Thunar"] focus;layout splith
 for_window [class="vlc"] focus;layout splith
 for_window [class="Eog"] focus;layout splith
@@ -263,12 +253,8 @@ bar {
     height 21
 
     # bar栏里的区域字体
-<<<<<<< HEAD
     font pango: FiraCode Nerd Font Mono,bold medium 17
     #font pango: FiraCode Nerd Font Mono,bold medium 9
-=======
-    font pango: FiraCode Nerd Font Mono,bold medium 9
->>>>>>> 360ef9dfdf0ce3b4278cc5e2ea8161fc9b447926
 
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
