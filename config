@@ -26,8 +26,8 @@ workspace_layout tabbed
 #边框粗细                                    
 # default_border normal|none|pixel
 # default_floating_border normal|none|pixel
-default_border pixel 0
-default_floating_border pixel 0
+default_border none
+default_floating_border none
 
 # 浮动窗口切换前置键
 floating_modifier $mod
@@ -99,9 +99,9 @@ bindsym $mod+p exec --no-startup-id /usr/bin/flameshot gui
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
 
 #声音大小调整
-bindsym $mod+y exec  pactl set-sink-volume 0 -1%
-bindsym $mod+u exec  pactl set-sink-volume 0 +1%
-bindsym $mod+m exec  pactl set-sink-mute 0 toggle
+bindsym $mod+y exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym $mod+u exec  pactl set-sink-volume @DEFAULT_SINK@ +1%
+bindsym $mod+m exec  pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # 使当前聚焦的窗口成为便笺簿
 bindsym $mod+Shift+c move scratchpad
