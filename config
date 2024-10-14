@@ -5,8 +5,8 @@ gaps inner 23
 gaps outer 0
 
 #非bar栏里的其他区域字体
-font pango: FiraCode Nerd Font Mono,bold medium 13
-#font pango: FiraCode Nerd Font Mono,bold medium 9
+#font pango: FiraCode Nerd Font Mono,bold medium 13
+font pango: FiraCode Nerd Font Mono,bold medium 9
 
 # focus_follows_mouse yes|no
 focus_follows_mouse no
@@ -51,7 +51,7 @@ exec --no-startup-id ibus-daemon -rxRd
 exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc
 exec --no-startup-id wezterm start zsh
 exec --no-startup-id clash&
-exec --no-startup-id picom --config ~/.config/i3/picom.conf -b
+#exec --no-startup-id picom --config ~/.config/i3/picom.conf -b
 exec --no-startup-id ~/.config/i3/autoload.sh
 
 bindsym Caps_Lock --release exec --no-startup-id dunstify "CapsLock: `xset q | sed -n 's/^.*Caps Lock:\s*\(\S*\).*$/\1/p'`" -t 1500 -r 6 -u low
@@ -126,7 +126,7 @@ mode "$resize" {
 bindsym $mod+r mode "$resize"
 
 # 打开app自动聚焦其窗口上
-for_window [class="Emacs" floating_from="user"] resize set 2040 1280,move left 595px,move up 315px
+#for_window [class="Emacs" floating_from="user"] resize set 2040 1280,move left 595px,move up 315px
 for_window [class="Thunar"] focus;layout splith
 for_window [class="vlc"] focus;layout splith
 for_window [class="Eog"] focus;layout splith
@@ -253,8 +253,8 @@ bar {
     height 21
 
     # bar栏里的区域字体
-    font pango: FiraCode Nerd Font Mono,bold medium 17
-    #font pango: FiraCode Nerd Font Mono,bold medium 9
+    #font pango: FiraCode Nerd Font Mono,bold medium 17
+    font pango: FiraCode Nerd Font Mono,bold medium 9
 
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
