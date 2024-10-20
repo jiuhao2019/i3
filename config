@@ -26,8 +26,8 @@ workspace_layout tabbed
 #边框粗细                                    
 # default_border normal|none|pixel
 # default_floating_border normal|none|pixel
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 0
+default_floating_border pixel 0
 
 # 浮动窗口切换前置键
 floating_modifier $mod
@@ -218,7 +218,7 @@ set $darkgray #1d2021
 
 #child_border:client.focused    <-  border color
 # class                 border    |backgr   |text     |indicator  |child_border
-client.focused          $blue     $blue     $darkgray $purple     $lavender
+client.focused          $blue     $blue     $darkgray $purple     $darkgray
 client.focused_inactive $darkgray $darkgray $yellow   $purple     $darkgray
 client.unfocused        $darkgray $darkgray $yellow   $purple     $darkgray
 client.urgent           $red      $red      $white    $red        $red
