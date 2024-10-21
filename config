@@ -5,8 +5,7 @@ gaps inner 23
 gaps outer 0
 
 #非bar栏里的其他区域字体
-font pango: FiraCode Nerd Font Mono,bold medium 13
-#font pango: FiraCode Nerd Font Mono,bold medium 9
+font pango: FiraCode Nerd Font Mono,bold medium 9
 
 # focus_follows_mouse yes|no
 focus_follows_mouse no
@@ -243,8 +242,7 @@ bar {
     height 21
 
     # bar栏里的区域字体
-    font pango: FiraCode Nerd Font Mono,bold medium 13
-    #font pango: FiraCode Nerd Font Mono,bold medium 9
+    font pango: FiraCode Nerd Font Mono,bold medium 9
 
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
