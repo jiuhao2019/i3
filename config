@@ -125,6 +125,29 @@ mode "$resize" {
 }
 bindsym $mod+r mode "$resize"
 
+#切换到第x号容器
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+10 workspace $ws10
+
+#将当前窗口移动到其他容器
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+10 move container to workspace $ws10
 # 打开app自动聚焦其窗口上
 #for_window [class="Emacs" floating_from="user"] resize set 2040 1280,move left 595px,move up 315px
 for_window [class="Thunar"] focus;layout splith
@@ -155,78 +178,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10"10"
 
-#切换到第x号容器
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+10 workspace $ws10
-
-#将当前窗口移动到其他容器
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+10 move container to workspace $ws10
-
-#宏定义颜色值
-set $rosewater #f4dbd6
-set $flamingo #f0c6c6
-set $pink #f5bde6
-set $mauve #c6a0f6
-set $maroon #ee99a0
-set $peach #f5a97f
-set $teal #8bd5ca
-set $sky #91d7e3
-set $sapphire #7dc4e4
-# set $lavender #b7bdf8
-set $lavender #d79921
-# set $lavender #9933ff
-set $text #cad3f5
-set $subtext1 #b8c0e0
-set $subtext0 #a5adcb
-set $overlay2 #939ab7
-set $overlay1 #8087a2
-set $overlay0 #6e738d
-set $surface2 #5b6078
-set $surface1 #494d64
-set $surface0 #363a4f
-set $base #24273a
-set $mantle #1e2030
-set $crust #181926
-
-# set primary gruvbox colorscheme colors
-set $bg #282828
-set $red #cc241d
-set $green #98971a
-set $yellow #d79921
-set $blue #458588
-set $purple #b16286
-set $aqua #689d68
-set $gray #a89984
-set $darkgray #1d2021
-
 #child_border:client.focused    <-  border color
-
-###########
-# gruvbox #
-###########
-# class                 border    |backgr   |text     |indicator  |child_border
-#client.focused          $blue     $blue     $darkgray $purple     $darkgray
-#client.focused_inactive $darkgray $darkgray $yellow   $purple     $darkgray
-#client.unfocused        $darkgray $darkgray $yellow   $purple     $darkgray
-#client.urgent           $red      $red      $white    $red        $red
-
 ############
 # dracular #
 ############
@@ -244,7 +196,6 @@ bar {
 
     # bar栏里的区域字体
     font pango: FiraCode Nerd Font Mono,bold medium 13
-    #font pango: FiraCode Nerd Font Mono,bold medium 9
 
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
@@ -266,35 +217,11 @@ bar {
     # workspace_buttons yes|no
     workspace_buttons yes
 
-    workspace_min_width 88
+    workspace_min_width 68
 
     # 容器title不显示序号
     strip_workspace_numbers yes
 
-###########
-# gruvbox #
-###########
-#  colors {
-#    # bar background color
-#    background $bg
-#
-#    # text color used for blocks that do not have a color specified.
-#    statusline $yellow
-#
-#    focused_statusline $text
-#    focused_separator  $base
-#
-#    # workspaces section            
-#                         # border  backgr.   text
-#    focused_workspace    $aqua     $aqua     $darkgray
-#    inactive_workspace   $darkgray $darkgray $yellow
-#    active_workspace     $darkgray $darkgray $yellow
-#    urgent_workspace     $red $red $bg
-#    binding_mode       $base $base $surface1
-#  }
-############
-# dracular #
-############
     colors {
        background #282A36
        statusline #F8F8F2
